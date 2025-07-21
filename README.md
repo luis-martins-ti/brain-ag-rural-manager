@@ -53,9 +53,10 @@ Vá em Create > Import From File > swagger.json
 Ele criará uma collection pronta para testar a API.
 
 ### 🧪 TESTES:
+Rodar fora do container:
 
 ```bash
-npm run test:e2e
+docker-compose exec app npm run test:e2e
 ```
 **Estrutura usada para testes:**
 Testes estão localizados em arquivos *.int-spec.ts
@@ -70,7 +71,7 @@ PrismaService é mockado para isolamento dos testes de regra de negócio
 | `Error: P1001 - Can't reach database server` | Banco ainda não subiu            | Aguarde o `docker compose up` concluir                         |
 | `Validation failed (numeric string...)`      | UUID ou número inválido          | Verifique os dados enviados na requisição                      |
 | Swagger não mostra endpoints atualizados     | Cache ou app não reiniciado      | Reinicie com `Ctrl+C` e `npm run start:dev`                    |
-
+| Não localizado o arquivo dist/main           | Arquivo .tsbuildinfo na raiz     | Remova o arquivo e rode novamente os comandos docker           |
 
 ### 📘 Tecnologias Utilizadas
 - NestJS

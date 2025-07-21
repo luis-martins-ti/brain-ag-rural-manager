@@ -86,7 +86,7 @@ describe('ProducerController (e2e)', () => {
         vegetationArea: 40,
         producerId: '1'
       })
-      .expect(500)
+      .expect(400)
       .expect((res) => {
         expect(res.body.message).toContain('A soma das áreas não pode ser maior que a área total');
       });
