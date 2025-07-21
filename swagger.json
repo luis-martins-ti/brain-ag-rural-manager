@@ -1,0 +1,565 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/producers": {
+      "post": {
+        "operationId": "ProducerController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProducerDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Producer created successfully"
+          }
+        },
+        "tags": [
+          "Producers"
+        ]
+      },
+      "get": {
+        "operationId": "ProducerController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns all producers"
+          }
+        },
+        "tags": [
+          "Producers"
+        ]
+      }
+    },
+    "/producers/{id}": {
+      "get": {
+        "operationId": "ProducerController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a producer by id"
+          }
+        },
+        "tags": [
+          "Producers"
+        ]
+      },
+      "put": {
+        "operationId": "ProducerController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProducerDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updates a producer by id"
+          }
+        },
+        "tags": [
+          "Producers"
+        ]
+      },
+      "delete": {
+        "operationId": "ProducerController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Removes a producer by id"
+          }
+        },
+        "tags": [
+          "Producers"
+        ]
+      }
+    },
+    "/properties": {
+      "post": {
+        "operationId": "PropertyController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePropertyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Property created successfully"
+          }
+        },
+        "tags": [
+          "Properties"
+        ]
+      }
+    },
+    "/properties/{id}": {
+      "put": {
+        "operationId": "PropertyController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePropertyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Property updated successfully"
+          }
+        },
+        "tags": [
+          "Properties"
+        ]
+      },
+      "get": {
+        "operationId": "PropertyController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get property by id"
+          }
+        },
+        "tags": [
+          "Properties"
+        ]
+      },
+      "delete": {
+        "operationId": "PropertyController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Property removed successfully"
+          }
+        },
+        "tags": [
+          "Properties"
+        ]
+      }
+    },
+    "/properties/{propertyId}/harvests": {
+      "post": {
+        "operationId": "HarvestController_create",
+        "parameters": [
+          {
+            "name": "propertyId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHarvestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Harvest created successfully"
+          }
+        },
+        "tags": [
+          "Harvests"
+        ]
+      }
+    },
+    "/properties/{propertyId}/harvests/{id}": {
+      "put": {
+        "operationId": "HarvestController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHarvestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Harvest updated successfully"
+          }
+        },
+        "tags": [
+          "Harvests"
+        ]
+      },
+      "delete": {
+        "operationId": "HarvestController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Harvest removed successfully"
+          }
+        },
+        "tags": [
+          "Harvests"
+        ]
+      }
+    },
+    "/harvests/{harvestId}/crops": {
+      "post": {
+        "operationId": "CropController_create",
+        "parameters": [
+          {
+            "name": "harvestId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCropDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Crop created successfully"
+          }
+        },
+        "tags": [
+          "Crops"
+        ]
+      }
+    },
+    "/harvests/{harvestId}/crops/{id}": {
+      "put": {
+        "operationId": "CropController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCropDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Crop updated successfully"
+          }
+        },
+        "tags": [
+          "Crops"
+        ]
+      },
+      "delete": {
+        "operationId": "CropController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Crop removed successfully"
+          }
+        },
+        "tags": [
+          "Crops"
+        ]
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "operationId": "DashboardController_getSummary",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Resumo do sistema com dados agregados para o dashboard"
+          }
+        },
+        "tags": [
+          "Dashboard"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Rural Manager API",
+    "description": "API para gerenciamento de produtores rurais",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CreatePropertyDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Fazenda Boa Esperança"
+          },
+          "city": {
+            "type": "string",
+            "example": "Uberlândia"
+          },
+          "state": {
+            "type": "string",
+            "example": "MG"
+          },
+          "totalArea": {
+            "type": "number",
+            "example": 100
+          },
+          "agriculturalArea": {
+            "type": "number",
+            "example": 60
+          },
+          "vegetationArea": {
+            "type": "number",
+            "example": 30
+          }
+        },
+        "required": [
+          "name",
+          "city",
+          "state",
+          "totalArea",
+          "agriculturalArea",
+          "vegetationArea"
+        ]
+      },
+      "CreateProducerDto": {
+        "type": "object",
+        "properties": {
+          "cpfCnpj": {
+            "type": "string",
+            "example": "12345678901"
+          },
+          "name": {
+            "type": "string",
+            "example": "João da Silva"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreatePropertyDto"
+            }
+          }
+        },
+        "required": [
+          "cpfCnpj",
+          "name"
+        ]
+      },
+      "UpdateProducerDto": {
+        "type": "object",
+        "properties": {
+          "cpfCnpj": {
+            "type": "string",
+            "example": "12345678901"
+          },
+          "name": {
+            "type": "string",
+            "example": "João da Silva"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreatePropertyDto"
+            }
+          }
+        }
+      },
+      "UpdatePropertyDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Fazenda Boa Esperança"
+          },
+          "city": {
+            "type": "string",
+            "example": "Uberlândia"
+          },
+          "state": {
+            "type": "string",
+            "example": "MG"
+          },
+          "totalArea": {
+            "type": "number",
+            "example": 100
+          },
+          "agriculturalArea": {
+            "type": "number",
+            "example": 60
+          },
+          "vegetationArea": {
+            "type": "number",
+            "example": 30
+          }
+        }
+      },
+      "CreateHarvestDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Safra 2022"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "UpdateHarvestDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Safra 2022"
+          }
+        }
+      },
+      "CreateCropDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Soja"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "UpdateCropDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Soja"
+          }
+        }
+      }
+    }
+  }
+}
